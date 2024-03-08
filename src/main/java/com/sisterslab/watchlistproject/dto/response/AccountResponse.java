@@ -2,17 +2,15 @@ package com.sisterslab.watchlistproject.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import java.util.Date;
 
 @Getter
 @Setter
-public class UserResponse {
+public class AccountResponse {
     private Long id;
-    private Long accountId;
+    private Long userId;
     private Date createdDate;
     private Date updatedDate;
     private String name;
-    private String userName;
-    private String email;
-    private String password;
 }

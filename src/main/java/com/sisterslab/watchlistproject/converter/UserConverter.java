@@ -11,6 +11,7 @@ public class UserConverter {
     public UserResponse toResponse(User entity){
         UserResponse userResponse = new UserResponse();
         userResponse.setId(entity.getId());
+        userResponse.setAccountId(entity.getId());//sonra bakman gerekiyor
         userResponse.setUserName(entity.getUserName());
         userResponse.setName(entity.getName());
         userResponse.setPassword(entity.getPassword());

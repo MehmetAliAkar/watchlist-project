@@ -16,9 +16,13 @@ import java.util.Date;
 public class BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Long id;
 
+    @Column(name="createdDate")
     private Date createdDate;
+    @Column(name="updatedDate")
+
     private Date updatedDate;
 
     @PrePersist

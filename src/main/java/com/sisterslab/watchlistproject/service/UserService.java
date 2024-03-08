@@ -2,7 +2,9 @@ package com.sisterslab.watchlistproject.service;
 
 import com.sisterslab.watchlistproject.converter.UserConverter;
 import com.sisterslab.watchlistproject.dto.request.UserRequestDto;
+import com.sisterslab.watchlistproject.dto.response.AccountResponse;
 import com.sisterslab.watchlistproject.dto.response.UserResponse;
+import com.sisterslab.watchlistproject.model.Account;
 import com.sisterslab.watchlistproject.model.User;
 import com.sisterslab.watchlistproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -49,8 +52,37 @@ public class UserService {
     }
 
     public void deleteUser(Long id) {
-        final var user = userRepository.findById(id)
+        User user = userRepository.findById(id)
                 .orElseThrow(()->new RuntimeException("Girdiğiniz Id de kulanıcı bulunamadı"));
         userRepository.deleteById(id);
+    }
+
+    public void deleteByName(String name) {
+        if (Objects.isNull(name)){
+            throw new RuntimeException("Silinecek kullanıcının adını giriniz!");
+        }
+        else{
+            User user = userRepository.findByName(name);
+            userRepository.delete(user);
+        }
+    }
+
+    public UserResponse updateUser(Long id, UserRequestDto dto) {
+        User watcher = userRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("Id bulunadi"));
+        watcher.setPassword(dto.getPassword());
+
+        return userConverter
+                .toResponse(userRepository.save(watcher));
+    }
+
+    public UserResponse updateAccountId(Long userId, AccountResponse response) {
+        User theReal = userRepository.findById(userId)
+                .orElseThrow(()->new RuntimeException("Id bulunadi"));
+        Account account = new Account();
+        account.setId(response.getId());
+        theReal.setAccounts((List<Account>) account);
+
+        return userConverter.toResponse(userRepository.save(theReal));
     }
 }

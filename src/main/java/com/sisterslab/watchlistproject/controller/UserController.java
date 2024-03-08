@@ -37,5 +37,14 @@ public class UserController {
         userService.deleteUser(id);
     }
 
+    @DeleteMapping("/name")
+    public void deleteByName(@RequestParam String name){
+        userService.deleteByName(name);
+    }
+
+    @PutMapping("/{id}")
+    public UserResponse updatePassword(@PathVariable Long id, @RequestBody UserRequestDto dto){
+        return userService.updateUser(id, dto);
+    }
 
 }
