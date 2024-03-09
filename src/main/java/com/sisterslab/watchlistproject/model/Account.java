@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -14,7 +13,6 @@ import java.util.Set;
 @Table(name = "account")
 public class Account extends BaseModel {
     private String name;
-
-    @ManyToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private List<User> users;
+    @OneToMany(mappedBy = "account")
+    private List<AccountUser> accountUserList;
 }

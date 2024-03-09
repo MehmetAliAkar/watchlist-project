@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Usr")
@@ -17,14 +19,6 @@ public class User extends BaseModel {
     private String email;
     private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "User_Course_Table",
-            joinColumns = {
-                    @JoinColumn(name="user_id",referencedColumnName = "id")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name="account_id",referencedColumnName = "id")
-            }
-    )
-    private List<Account> accounts;
+    @OneToMany(mappedBy = "user")
+    private List<AccountUser> accountUserList;
 }

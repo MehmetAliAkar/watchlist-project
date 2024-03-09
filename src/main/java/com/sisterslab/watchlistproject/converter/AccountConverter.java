@@ -14,7 +14,7 @@ public class AccountConverter {
     public AccountResponse toResponse(Account entity){
         AccountResponse response = new AccountResponse();
         response.setId(entity.getId());
-        response.setUserId(Objects.nonNull( entity.getUsers().get(0)) ? entity.getUsers().get(0).getId() : null);
+        //buraya userId
         response.setCreatedDate(entity.getCreatedDate());
         response.setUpdatedDate(entity.getUpdatedDate());
         response.setName(entity.getName());
