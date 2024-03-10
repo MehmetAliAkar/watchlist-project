@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -13,6 +14,9 @@ import java.util.List;
 @Table(name = "account")
 public class Account extends BaseModel {
     private String name;
-    @OneToMany(mappedBy = "account")
-    private List<AccountUser> accountUserList;
+    private String description;
+    private Date publicationDate;
+    private double puan;
+    /*@OneToMany(mappedBy = "account")
+    private List<AccountUser> accountUserList;*/
 }

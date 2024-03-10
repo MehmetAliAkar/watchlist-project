@@ -9,8 +9,11 @@ import java.util.Date;
 @Setter
 public class AccountResponse {
     private Long id;
-    private Long userId;
+    //private Long userId;
     private Date createdDate;
     private Date updatedDate;
     private String name;
+    private String description;
+    private Date publicationDate;
+    private double puan;
 }

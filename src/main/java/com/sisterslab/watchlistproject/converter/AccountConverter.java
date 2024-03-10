@@ -18,6 +18,9 @@ public class AccountConverter {
         response.setCreatedDate(entity.getCreatedDate());
         response.setUpdatedDate(entity.getUpdatedDate());
         response.setName(entity.getName());
+        response.setPuan(entity.getPuan());
+        response.setDescription(entity.getDescription());
+        response.setPublicationDate(entity.getPublicationDate());
 
         return response;
     }
@@ -25,11 +28,13 @@ public class AccountConverter {
     public Account toEntity(AccountRequestDto dto){
         Account account = new Account();
         account.setName(dto.getName());
+        account.setPuan(dto.getPuan());
+        account.setDescription(dto.getDescription());
 
-        User user = new User();
-        user.setId(dto.getUserId());
+        /*User user = new User();
+        user.setId(dto.getUserId());*/
 
-        account.setUsers(Collections.singletonList(user));
+        //account.setUsers(Collections.singletonList(user));
         return account;
     }
 }

@@ -19,6 +19,6 @@ public class User extends BaseModel {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<AccountUser> accountUserList;
+    /*@OneToMany(mappedBy = "user")
+    private List<AccountUser> accountUserList;*/
 }

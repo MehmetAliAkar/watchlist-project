@@ -1,4 +1,4 @@
-package com.sisterslab.watchlistproject.model;
+/*package com.sisterslab.watchlistproject.model;
 
 import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
@@ -22,4 +22,4 @@ public class AccountUser extends BaseModel {
     @ManyToOne()
     @JoinColumn(name = "account_id")
     private Account account;
-}
+}*/

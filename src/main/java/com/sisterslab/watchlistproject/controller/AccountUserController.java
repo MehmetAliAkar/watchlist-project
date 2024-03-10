@@ -1,4 +1,4 @@
-package com.sisterslab.watchlistproject.controller;
+/*package com.sisterslab.watchlistproject.controller;
 
 import com.fasterxml.jackson.databind.JsonSerializable;
 import com.sisterslab.watchlistproject.core.endpoints.BaseEndpoints;
@@ -25,4 +25,4 @@ public class AccountUserController {
     public List<AccountUser> getAll(){
         return accountUserService.getAll();
     }
-}
+}*/

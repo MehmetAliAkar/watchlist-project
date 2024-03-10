@@ -1,4 +1,4 @@
-package com.sisterslab.watchlistproject.service;
+/*package com.sisterslab.watchlistproject.service;
 
 import com.sisterslab.watchlistproject.model.AccountUser;
 import com.sisterslab.watchlistproject.repository.AccountUserRepository;
@@ -15,4 +15,4 @@ public class AccountUserService implements AccountUserToImplement{
     public List<AccountUser> getAll(){
         return accountUserRepository.findAll();//bburaya bak
     }
-}
+}*/

@@ -46,5 +46,4 @@ public class UserController {
     public UserResponse updatePassword(@PathVariable Long id, @RequestBody UserRequestDto dto){
         return userService.updateUser(id, dto);
     }
-
 }

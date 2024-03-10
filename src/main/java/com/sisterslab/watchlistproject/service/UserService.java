@@ -4,7 +4,7 @@ import com.sisterslab.watchlistproject.converter.UserConverter;
 import com.sisterslab.watchlistproject.dto.request.UserRequestDto;
 import com.sisterslab.watchlistproject.dto.response.AccountResponse;
 import com.sisterslab.watchlistproject.dto.response.UserResponse;
-import com.sisterslab.watchlistproject.model.Account;
+//import com.sisterslab.watchlistproject.model.Account;
 import com.sisterslab.watchlistproject.model.User;
 import com.sisterslab.watchlistproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,8 +31,8 @@ public class UserService {
         }
         List<User> savedUser = userRepository.saveAll(userList);
         List<UserResponse> responseList = new ArrayList<>();
-        for (User sarjIstasyon : savedUser) {
-            responseList.add(userConverter.toResponse(sarjIstasyon));
+        for (User user : savedUser) {
+            responseList.add(userConverter.toResponse(user));
         }
         return responseList;
     }
@@ -76,7 +76,7 @@ public class UserService {
                 .toResponse(userRepository.save(watcher));
     }
 
-    public UserResponse updateAccountId(Long userId, AccountResponse response) {
+  /* public UserResponse updateAccountId(Long userId, AccountResponse response) {
         User theReal = userRepository.findById(userId)
                 .orElseThrow(()->new RuntimeException("Id bulunadi"));
         Account account = new Account();
@@ -84,5 +84,5 @@ public class UserService {
         theReal.setAccounts((List<Account>) account);
 
         return userConverter.toResponse(userRepository.save(theReal));
-    }
+    }*/
 }
