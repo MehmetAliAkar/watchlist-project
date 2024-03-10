@@ -1,25 +1,22 @@
 package com.sisterslab.watchlistproject.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "account")
-public class Account extends BaseModel {
+@Table(name = "film")
+public class Film extends BaseModel {
     private String name;
     private String description;
     //private Date publicationDate;
     private double puan;
-    @ManyToMany(mappedBy = "accounts", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "films", fetch = FetchType.LAZY)
 
     private Set<User> users;
 }

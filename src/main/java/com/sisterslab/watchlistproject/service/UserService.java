@@ -2,7 +2,6 @@ package com.sisterslab.watchlistproject.service;
 
 import com.sisterslab.watchlistproject.converter.UserConverter;
 import com.sisterslab.watchlistproject.dto.request.UserRequestDto;
-import com.sisterslab.watchlistproject.dto.response.AccountResponse;
 import com.sisterslab.watchlistproject.dto.response.UserResponse;
 //import com.sisterslab.watchlistproject.model.Account;
 import com.sisterslab.watchlistproject.model.User;

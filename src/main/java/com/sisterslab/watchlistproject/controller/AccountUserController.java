@@ -5,7 +5,7 @@ import com.sisterslab.watchlistproject.converter.UserConverter;
 import com.sisterslab.watchlistproject.core.endpoints.BaseEndpoints;
 import com.sisterslab.watchlistproject.dto.response.UserResponse;
 import com.sisterslab.watchlistproject.model.User;
-import com.sisterslab.watchlistproject.repository.AccountRepository;
+import com.sisterslab.watchlistproject.repository.FilmRepository;
 import com.sisterslab.watchlistproject.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountUserController {
     private UserRepository userRepository;
-    private AccountRepository accountRepository;
+    private FilmRepository accountRepository;
     private UserConverter userConverter;
 
     @PostMapping

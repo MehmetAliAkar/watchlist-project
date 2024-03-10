@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class AccountRequestDto {
+public class FilmRequestDto {
     private String name;
     //private Long userId;
     private String description;

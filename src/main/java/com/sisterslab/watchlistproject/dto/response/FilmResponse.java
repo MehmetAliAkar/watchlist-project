@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class AccountResponse {
+public class FilmResponse {
     private Long id;
     //private Long userId;
     private Date createdDate;

@@ -24,5 +24,5 @@ public class User extends BaseModel {
             inverseJoinColumns = @JoinColumn(name = "account_id")
     )
 
-    private Set<Account> accounts;
+    private Set<Film> films;
 }

@@ -1,16 +1,15 @@
 package com.sisterslab.watchlistproject.converter;
 
-import com.sisterslab.watchlistproject.dto.request.AccountRequestDto;
-import com.sisterslab.watchlistproject.dto.response.AccountResponse;
-import com.sisterslab.watchlistproject.model.Account;
-import com.sisterslab.watchlistproject.model.User;
+import com.sisterslab.watchlistproject.dto.request.FilmRequestDto;
+import com.sisterslab.watchlistproject.dto.response.FilmResponse;
+import com.sisterslab.watchlistproject.model.Film;
 import org.springframework.stereotype.Component;
 
 
 @Component
-public class AccountConverter {
-    public AccountResponse toResponse(Account entity){
-        AccountResponse response = new AccountResponse();
+public class FilmConverter {
+    public FilmResponse toResponse(Film entity){
+        FilmResponse response = new FilmResponse();
         response.setId(entity.getId());
         //buraya userId
         response.setCreatedDate(entity.getCreatedDate());
@@ -23,16 +22,16 @@ public class AccountConverter {
         return response;
     }
 
-    public Account toEntity(AccountRequestDto dto){
-        Account account = new Account();
-        account.setName(dto.getName());
-        account.setPuan(dto.getPuan());
-        account.setDescription(dto.getDescription());
+    public Film toEntity(FilmRequestDto dto){
+        Film film = new Film();
+        film.setName(dto.getName());
+        film.setPuan(dto.getPuan());
+        film.setDescription(dto.getDescription());
 
         /*User user = new User();
         user.setId(dto.getUserId());*/
 
         //account.setUsers(Collections.singletonList(user));
-        return account;
+        return film;
     }
 }
