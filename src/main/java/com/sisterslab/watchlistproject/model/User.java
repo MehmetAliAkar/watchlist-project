@@ -3,14 +3,20 @@ package com.sisterslab.watchlistproject.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "Usr")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User extends BaseModel {
     private String name;
     private String userName;
@@ -23,6 +29,9 @@ public class User extends BaseModel {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "account_id")
     )
+    private Set<Film> films = new HashSet<>();
 
-    private Set<Film> films;
+    public void enrollFilm(Film film) {
+        films.add(film);
+    }
 }

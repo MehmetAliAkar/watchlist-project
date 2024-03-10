@@ -1,18 +1,16 @@
 package com.sisterslab.watchlistproject.core.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode
 @ToString
 @MappedSuperclass
+@AllArgsConstructor
+@NoArgsConstructor
 public class BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

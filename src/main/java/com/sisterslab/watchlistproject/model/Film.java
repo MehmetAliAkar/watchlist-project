@@ -2,14 +2,14 @@ package com.sisterslab.watchlistproject.model;
 
 import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "film")
 public class Film extends BaseModel {
     private String name;
