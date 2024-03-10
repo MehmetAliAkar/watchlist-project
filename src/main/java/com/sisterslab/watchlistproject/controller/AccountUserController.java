@@ -1,7 +1,9 @@
 package com.sisterslab.watchlistproject.controller;
 
 import com.fasterxml.jackson.databind.JsonSerializable;
+import com.sisterslab.watchlistproject.converter.UserConverter;
 import com.sisterslab.watchlistproject.core.endpoints.BaseEndpoints;
+import com.sisterslab.watchlistproject.dto.response.UserResponse;
 import com.sisterslab.watchlistproject.model.User;
 import com.sisterslab.watchlistproject.repository.AccountRepository;
 import com.sisterslab.watchlistproject.repository.UserRepository;
@@ -17,10 +19,11 @@ import java.util.List;
 public class AccountUserController {
     private UserRepository userRepository;
     private AccountRepository accountRepository;
+    private UserConverter userConverter;
 
     @PostMapping
-    public User saveStudentWithAccount(@RequestBody User user){
-        return userRepository.save(user);
+    public User saveUserWithAccount(@RequestBody User user){
+        return  userRepository.save(user);
     }
 
     @GetMapping
@@ -29,7 +32,7 @@ public class AccountUserController {
     }
 
     @GetMapping("/{id}")
-    public User findUser(Long id){
+    public User findUser(@RequestBody Long id){
         return userRepository.findById(id).orElse(null);
     }
 }

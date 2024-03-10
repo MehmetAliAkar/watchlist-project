@@ -1,5 +1,6 @@
 package com.sisterslab.watchlistproject.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,5 +23,6 @@ public class User extends BaseModel {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "account_id")
     )
+
     private Set<Account> accounts;
 }

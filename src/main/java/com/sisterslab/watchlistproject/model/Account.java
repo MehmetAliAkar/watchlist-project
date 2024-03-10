@@ -1,5 +1,6 @@
 package com.sisterslab.watchlistproject.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,5 +20,6 @@ public class Account extends BaseModel {
     //private Date publicationDate;
     private double puan;
     @ManyToMany(mappedBy = "accounts", fetch = FetchType.LAZY)
+
     private Set<User> users;
 }

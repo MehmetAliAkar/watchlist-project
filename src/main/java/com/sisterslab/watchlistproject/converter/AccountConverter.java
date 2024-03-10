@@ -6,8 +6,6 @@ import com.sisterslab.watchlistproject.model.Account;
 import com.sisterslab.watchlistproject.model.User;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
-import java.util.Objects;
 
 @Component
 public class AccountConverter {
