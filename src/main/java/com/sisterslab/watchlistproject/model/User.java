@@ -4,9 +4,6 @@ import com.sisterslab.watchlistproject.core.model.BaseModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,6 +16,11 @@ public class User extends BaseModel {
     private String email;
     private String password;
 
-    /*@OneToMany(mappedBy = "user")
-    private List<AccountUser> accountUserList;*/
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_account",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "account_id")
+    )
+    private Set<Account> accounts;
 }

@@ -20,7 +20,7 @@ public class AccountConverter {
         response.setName(entity.getName());
         response.setPuan(entity.getPuan());
         response.setDescription(entity.getDescription());
-        response.setPublicationDate(entity.getPublicationDate());
+        //response.setPublicationDate(entity.getPublicationDate());
 
         return response;
     }
