@@ -45,5 +45,4 @@ public class AccountUserController {
         user.enrollFilm(film);
         return userRepository.save(user);
     }
-
 }
